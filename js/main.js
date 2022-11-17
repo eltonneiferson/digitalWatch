@@ -2,11 +2,13 @@ const main = document.querySelector('#container')
 const spanHour = document.querySelector('.hour')
 const spanMinutes = document.querySelector('.minutes')
 const spanSeconds = document.querySelector('.seconds')
+const spanWeek = document.querySelector('.week')
 const spanDays = document.querySelector('.day')
 const spanMonth = document.querySelector('.month')
 const spanYear = document.querySelector('.year')
 const buttonDarkMode = document.querySelector('.on-off')
 const currentTime = new Date()
+let weekDay = currentTime.getDay()
 let day = currentTime.getDate()
 let month = currentTime.getMonth()
 let year = currentTime.getFullYear()
@@ -27,10 +29,19 @@ if (month == 9){month = "Outubro"}
 if (month == 10){month = "Novembro"}
 if (month == 11){month = "Dezembro"}
 
-spanDays.textContent = day
+if (weekDay == 0){weekDay = "Domingo"}
+if (weekDay == 1){weekDay = "Segunda-Feira"}
+if (weekDay == 2){weekDay = "Terça-Feira"}
+if (weekDay == 3){weekDay = "Quarta-Feira"}
+if (weekDay == 4){weekDay = "Quinta-Feira"}
+if (weekDay == 5){weekDay = "Sexta-Feira"}
+if (weekDay == 6){weekDay = "Sábado"}
+
+spanWeek.textContent = weekDay
+spanDays.textContent = String(day).padStart(2, '0')
 spanMonth.textContent = month
 spanYear.textContent = year
-spanHour.textContent = hour
+spanHour.textContent = String(hour).padStart(2, '0')
 spanMinutes.textContent = String(minutes).padStart(2, '0')
 spanSeconds.textContent = String(seconds).padStart(2, '0')
 
@@ -40,7 +51,7 @@ function countSeconds() {
         if(seconds == 60){
             seconds = 0
             ++minutes
-            spanSeconds.textContent = seconds
+            spanSeconds.textContent = String(seconds).padStart(2, '0')
             spanMinutes.textContent = String(minutes).padStart(2, '0')
         }
 
@@ -48,7 +59,7 @@ function countSeconds() {
             minutes = 0
             ++hour
             spanMinutes.textContent = String(minutes).padStart(2, '0')
-            spanHour.textContent = hour
+            spanHour.textContent = String(hour).padStart(2, '0')
         }
         spanSeconds.textContent = String(seconds).padStart(2, '0')
         countSeconds()
