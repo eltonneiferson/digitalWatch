@@ -6,6 +6,10 @@ const spanWeek = document.querySelector('.week')
 const spanDays = document.querySelector('.day')
 const spanMonth = document.querySelector('.month')
 const spanYear = document.querySelector('.year')
+const darkTheme = document.querySelector('#dark')
+const blueTheme = document.querySelector('#blue')
+const greenTheme = document.querySelector('#green')
+const redTheme = document.querySelector('#red')
 const currentTime = new Date()
 let weekDay = currentTime.getDay()
 let day = currentTime.getDate()
@@ -65,3 +69,31 @@ setInterval(() => {
 }, 1000)
 
 writeTime()
+
+darkTheme.addEventListener('click', () => {
+    main.classList.remove('blueMode')
+    main.classList.remove('greenMode')
+    main.classList.remove('redMode')
+    main.classList.add('darkMode')
+})
+
+blueTheme.addEventListener('click', () => {
+    main.classList.remove('darkMode')
+    main.classList.remove('greenMode')
+    main.classList.remove('redMode')
+    main.classList.add('blueMode')
+})
+
+greenTheme.addEventListener('click', () => {
+    main.classList.remove('darkMode')
+    main.classList.remove('blueMode')
+    main.classList.remove('redMode')
+    main.classList.add('greenMode')
+})
+
+redTheme.addEventListener('click', () => {
+    main.classList.remove('darkMode')
+    main.classList.remove('blueMode')
+    main.classList.remove('greenMode')
+    main.classList.add('redMode')
+})

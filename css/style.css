@@ -10,17 +10,27 @@ body * {
 
 main {
     height: 100vh;
-    background-color: black;
-    color: white;
     display: grid;
+    color: white;
     place-content: center;
     place-items: center;
     gap: 1rem;
 }
 
-.whiteMode {
-    background-color: white;
-    color: black;
+.darkMode {
+    background-color: black;
+}
+
+.blueMode {
+    background-color: blue;
+}
+
+.greenMode {
+    background-color: green;
+}
+
+.redMode {
+    background-color: red;
 }
 
 .time {
@@ -48,43 +58,31 @@ main {
 }
 
 .controls input[type="radio"] {
+    --color-input: black;
     appearance: none;
     cursor: pointer;
+    border: 3px solid var(--color-input);
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 50%;
 }
 
-input[type="radio"] {
-    border: 2px solid black;
+input[type="radio"]:checked {
+    background-color: var(--color-input);
 }
 
 #dark {
-    border: 3px solid black;
+    --color-input: black;
 }
 
-#dark:checked {
-    background: black;
+#blue {
+    --color-input: blue;
 }
 
-#white, #white:checked {
-    border: 3px solid white;
-    /* background: white; */
+#green {
+    --color-input: green;
 }
 
-#green, #green:checked {
-    border: 3px solid green;
-    /* background: green; */
-}
-
-#yellow {
-    border: 3px solid yellow;
-}
-
-#yellow:checked {
-    background: yellow;
-}
-
-.moveButton {
-    right: 0.5rem;
+#red {
+    --color-input: red;
 }
