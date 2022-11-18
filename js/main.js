@@ -6,7 +6,6 @@ const spanWeek = document.querySelector('.week')
 const spanDays = document.querySelector('.day')
 const spanMonth = document.querySelector('.month')
 const spanYear = document.querySelector('.year')
-const buttonDarkMode = document.querySelector('.on-off')
 const currentTime = new Date()
 let weekDay = currentTime.getDay()
 let day = currentTime.getDate()
@@ -64,10 +63,5 @@ setInterval(() => {
     }
     spanSeconds.textContent = String(seconds).padStart(2, '0')
 }, 1000)
-
-buttonDarkMode.addEventListener('click', () => {
-    buttonDarkMode.classList.toggle('moveButton')
-    main.classList.toggle('whiteMode')
-})
 
 writeTime()

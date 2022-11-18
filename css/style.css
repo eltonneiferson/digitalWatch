@@ -37,30 +37,54 @@ main {
     font-size: .5rem;
 }
 
-.control {
-    width: 100px;
-    height: 50px;
-    padding: .5rem;
-    border-radius: 60px;
-    border: 3px solid black;
+.controls {
+    list-style: none;
     background-color: white;
+    padding: .5rem .9rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-top: 1.5rem;
-    position: relative;
-  }
-  
-  .on-off {
-    background-color: black;
+    gap: .5rem;
+    border-radius: 1rem;
+}
+
+.controls input[type="radio"] {
+    appearance: none;
     cursor: pointer;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    position: absolute;
-  }
-  
-  .moveButton {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+}
+
+input[type="radio"] {
+    border: 2px solid black;
+}
+
+#dark {
+    border: 3px solid black;
+}
+
+#dark:checked {
+    background: black;
+}
+
+#white, #white:checked {
+    border: 3px solid white;
+    /* background: white; */
+}
+
+#green, #green:checked {
+    border: 3px solid green;
+    /* background: green; */
+}
+
+#yellow {
+    border: 3px solid yellow;
+}
+
+#yellow:checked {
+    background: yellow;
+}
+
+.moveButton {
     right: 0.5rem;
-  }
+}
